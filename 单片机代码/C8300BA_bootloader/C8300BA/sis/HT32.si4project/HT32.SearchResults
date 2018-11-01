@@ -1,0 +1,8 @@
+---- BOOT_OPT Matches (3 in 1 files) ----
+ht32_op.s (D:\work\code\LongCloud\C8300BA_20180306\C8300BA\project_template\IP\Example\MDK_ARMv5) line 209 : BOOT_OPT      EQU     0
+ht32_op.s (D:\work\code\LongCloud\C8300BA_20180306\C8300BA\project_template\IP\Example\MDK_ARMv5) line 214 :     IF BOOT_OPT <> 0
+ht32_op.s (D:\work\code\LongCloud\C8300BA_20180306\C8300BA\project_template\IP\Example\MDK_ARMv5) line 220 :                 IF      BOOT_OPT <> 0
+---- Bootloader Matches (3 in 1 files) ----
+ht32_op.s (D:\work\code\LongCloud\C8300BA_20180306\C8300BA\project_template\IP\Example\MDK_ARMv5) line 208 : ;// <e> Program Bootloader Options
+ht32_op.s (D:\work\code\LongCloud\C8300BA_20180306\C8300BA\project_template\IP\Example\MDK_ARMv5) line 210 : ;//   <o> Bootloader Waiting time (mS) <1500-14200:50>
+ht32_op.s (D:\work\code\LongCloud\C8300BA_20180306\C8300BA\project_template\IP\Example\MDK_ARMv5) line 211 : ;//    <i> Bootloader Waiting time in mSecond

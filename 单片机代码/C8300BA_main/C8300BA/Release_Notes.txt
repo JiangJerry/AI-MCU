@@ -1,0 +1,228 @@
+/*********************************************************************************************************//**
+ * @file    Release_Notes.txt
+ * @version v0.0.4
+ * @date    2017-10-19
+ * @brief   The Release notes of HT32 Firmware Library.
+ *************************************************************************************************************
+ * @attention
+ *
+ * Firmware Disclaimer Information
+ *
+ * 1. The customer hereby acknowledges and agrees that the program technical documentation, including the
+ *    code, which is supplied by Holtek Semiconductor Inc., (hereinafter referred to as "HOLTEK") is the
+ *    proprietary and confidential intellectual property of HOLTEK, and is protected by copyright law and
+ *    other intellectual property laws.
+ *
+ * 2. The customer hereby acknowledges and agrees that the program technical documentation, including the
+ *    code, is confidential information belonging to HOLTEK, and must not be disclosed to any third parties
+ *    other than HOLTEK and the customer.
+ *
+ * 3. The program technical documentation, including the code, is provided "as is" and for customer reference
+ *    only. After delivery by HOLTEK, the customer shall use the program technical documentation, including
+ *    the code, at their own risk. HOLTEK disclaims any expressed, implied or statutory warranties, including
+ *    the warranties of merchantability, satisfactory quality and fitness for a particular purpose.
+ *
+ * <h2><center>Copyright (C) Holtek Semiconductor Inc. All rights reserved</center></h2>
+ ************************************************************************************************************/
+
+// Supported Device
+// ========================================
+//   HT32F52220, HT32F52230
+//   HT32F52231, HT32F52241
+//   HT32F52331, HT32F52341
+//   HT32F52342, HT32F52352
+//   HT32F52243, HT32F52253
+//   HT32F5826
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32_STD_5xxxx_FWLib_v004_1996                                                                           */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-10-19
+
+  Main Changes
+  + Update "system_ht32F5xxxx_03.c", modify PLL related setting.
+  + Change "LIBCFG_WP_2PAGE_PER_BIT" to "LIBCFG_FLASH_2PAGE_PER_WPBIT".
+
+  Others
+  + Update "PWRCU/DeepSleepMode2" example, fix compiler error when DISABLE_DEBUG_PIN=1.
+  + Update "WDT/Period_Reload" example, fix comment typing error.
+  + Add "LIBCFG_CHIPNAME" define.
+  + Update project setting.
+  + Update "NVIC/External_Interrupt" example, remove unuse define.
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32_STD_5xxxx_FWLib_v004_1790                                                                           */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-09-05
+
+  Main Changes
+  + Fix vector table error ("startup_ht32f5xxxx_01.s").
+
+  Others
+  + Update "system_ht32f5xxxx_xx.c".
+  + Update Keil project setting, enable "User->After Build Run #1" as default value to output Binary file.
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32_STD_5xxxx_FWLib_v004_1753                                                                           */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-08-31
+
+  Main Changes
+  + Rename "HT32F520xx_FWLib" to "HT32_STD_5xxxx_FWLib" and "520xx" to "5xxxx".
+    The following files are also renamed.
+    Old                                           New
+    ======================================        ======================================
+    startup_ht32f520xx_01.s                       startup_ht32f5xxxx_01.s
+    system_ht32f520xx_01.c                        system_ht32f5xxxx_01.c
+    system_ht32f5xxxx_02.c                        system_ht32f5xxxx_02.c
+    ht32f520xx_01_it.c                            ht32f5xxxx_01_it.c
+    ht32f523xx_01_usbdconf.h                      ht32f5xxxx_01_usbdconf.h
+    ht32f520xx_01_conf.h                          ht32f5xxxx_conf.h
+    HT32F520xx_01_DebugSupport.ini                HT32F5xxxx_01_DebugSupport.ini
+    ht32f520xx_sk.c                               ht32f5xxxx_board_01.c
+    ht32f520xx_01.h                               ht32f5xxxx_01.h
+
+  Others
+  + Update "ht32_usbd_core.c" to support vendor function.
+  + Add "USE_MEM_HT32F5xxxx" define into project.
+  + Add "USE_MEM_HT32F5xxxx" default define into "ht32f5xxxx_xx_libcfg.h".
+  + Update the IAP Example. Change IAP loader size from 3 KBytes to 4 KBytes (Since the code size of IAP
+    example for IAR EWARM is large than 3 KB).
+  + Add new device support
+    HT32F5826
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v003_1661                                                                               */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-07-27
+
+  Main Changes
+  + Add hardware divider driver, "ht32f520xx_div.c/h"
+  + Update following example to support HT32F52243 and HT32F52253.
+    DIV, IAP, SPI, TM
+    Note: The code size of IAP example for IAR EWARM is large than 3 KB. It over Reserved size of the IAP
+          area. We will update it in the next version.
+
+  Others
+  + Update project related file and setting.
+  + Modify USB/Mass_Storage example for WIN10 compatibility issue.
+  + Update "ht32_op.c" and "ht32_op.s", add CK_CODE/CK_DATA/CK_CODEOP in Option Bytes (same format with e-Writer32).
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v003_1566                                                                               */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-07-17
+
+  Main Changes
+  + Fix COM1 & BUZZER setting error of "ht32f52253_sk.h".
+  + Update following example to support HT32F52243 and HT32F52253.
+    ADC, I2C
+
+  Others
+  + Update ht32_op.s and ht32_op.c
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v003_1534                                                                               */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-07-03
+
+  Main Changes
+  + Add new device support
+    HT32F52243, HT32F52253
+    Note: The following example is not supported yet for the HT32F52243 and HT32F52253.
+          ADC, DIV, I2C, IAP, SPI, TM
+  + Add IAR EWARMv8 project template (create by IAR EWARE v8.11).
+  + Update "system_ht32f520xx_01.c" and "system_ht32f520xx_02.c" to support different setting between
+    IAP and AP.
+  + Fix "ht32_retarget.c" error (UxART Rx interrupt is no need to turn on).
+  + Update UxART driver to sync with HT32_STD_1xxxx FW Library.
+  + Modify following variable name of "MCTM_CHBRKCTRInitTypeDef".
+    Break         -> Break0
+    BreakPolarity -> Break0Polarity
+
+  Others
+  + Update project related file and setting.
+  + Upgrade the version of IAR EWARM project template from v6.20 to v6.50.
+    Note:
+    1. Supported CMSIS-DAP: IAR EWARM v6.50 and above.
+    2. RDI/e-Link32 is not supported anymore from the v8.xx of IAR EWARM.
+    3. For the Cortex-M0+, you must use IAR EWARM v6.40 and above.
+  + Update file format and coding style.
+  + Modify "EXTI_DebounceCnt" of "EXTI_InitTypeDef" from u32 to u16, to prevent count setting over range.
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v002_1320                                                                               */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2017-05-04
+
+  Main Changes
+  + Fix IAR compiler failed issue of "ht32_cm0plus_misc.c" (Tool Internal Error with Access violation error).
+
+  Others
+  + Fix config error of ADC example, "PWMTrigger_OneShotMode".
+  + Rename ADC example "PWMTrigger_OneShotMode" as "TM_Trigger".
+  + Add ADC example, "TM_Trigger_with_Delay".
+  + Fix I2C register naming (ADDBR to ADDSR).
+  + Fix build error when Library Debug mode enable.
+  + Fix IAP example, add "USART_ClearFlag(HTCFG_UART_PORT,USART_FLAG_TOUT)" in the UART ISR.
+  + Fix SPI Flash dual read, enable dual read function (SPI_DUALCmd()) before send dummy bytes.
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v002_1143                                                                               */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2016-10-11
+
+  Main Changes
+  + Fix FLASH_WP_ALLPAGE_SET macro error.
+  + Add memory footprint information (ht32fxxxxx_xx_libcfg.h).
+
+  Others
+  + Update typing error and naming rule.
+  + Update "ht32f520xx_02.h" variable data type define to prevent data type confusion (such as const s32 not
+    equal to sc32).
+  + Modify Re-target to USB Tx buffer size from 63 to 1. Add notice message for SERIAL_Flush() when Tx buffer
+    size is lager than 1.
+  + Update MDK_ARMv5 project setting.
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v002_966                                                                                */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2016-08-17
+
+  Main Changes
+  + Add "CKCU_HSIAutoTrimIsReady()" functions.
+  + Fix Re-target USB virtual bug (Bulk out 64 Bytes without zero length OUT is not allow).
+  + Add example code.
+  + Update IAR EWARM project of example codes.
+  + Add random number function/example.
+
+  Others
+  + Rename and update "HT32_Virtual_COM.inf". Add VID/PID for e-Link32Pro USB to UART function.
+  + Update pin assignment of HT32F52341 SPI/Master example.
+  + Fix "CKCU_GetClocksFrequency()" and "CKCU_GetPLLFrequency()" error.
+  + Update typing error and naming rule.
+  + Fix USB descriptor error of "ht32_retarget_desc.h".
+  + Fix CKCU/Clock_Configuration example error (CKOUT pin).
+
+/*----------------------------------------------------------------------------------------------------------*/
+/* HT32F520xx_FWLib_v002_820                                                                                */
+/*----------------------------------------------------------------------------------------------------------*/
+  Release Date: 2016-06-20
+
+  Main Changes
+  + Fix IAP_Text_RAM example setting error.
+  + Fix "_USBD_CopyMemory()" error.
+  + Fix EXTI init sequence of HT32F_DVB_PBInit() which may cause unexpect EXTI interrupt.
+  + Fix LIBCFG_WP_2PAGE_PER_BIT define error of HT32F52331/41.
+  + Add project files of MDK_ARMv5 (*.uvprojx), select CMSIS-DAP debug adapter as default setting.
+
+  Others
+  + Fix IAR scanf not work issue
+  + Add UART interrupt mode for Re-target.
+  + Improve efficiency of USB re-target (USB IN).
+  + Modify uIsTerminalOpened check method.
+  + Fix Re-target to USB bug (OUT data overrun the Rx buffer).
+  + Remove unnecessary divide/mod operation ("ring_buffer.c", "ht32_serial.c").
+  + Remove unnecessary code of "ht32f520xx_tm.c".
+  + Fix Buffer_GetLength error of "ring_buffer.c".
+  + Modify __RBIT as RBIT of "ht32_cm0plus_misc.c" (__RBIT is keyword of IAR).
